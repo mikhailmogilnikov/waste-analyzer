@@ -56,13 +56,13 @@
 .attach-field {
     @include flex(0.7em, column, center, center);
 
-    max-width: 800px;
-    aspect-ratio: 16 / 9;
+    height: 60vh;
     border: 2px dashed gray;
     border-radius: $corner;
     margin-top: 20px;
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
+    text-align: center;
 
     @media (pointer: fine) {
         &:hover {

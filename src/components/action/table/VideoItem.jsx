@@ -54,7 +54,9 @@ const VideoItem = ({ id, status, fileName, type = '', avg }) => {
       {type !== '' ? (
         <h5 className="w-[45%] dark:text-white">{result}</h5>
       ) : (
-        <h5 className="w-[45%] font-normal italic dark:text-white opacity-50">Ожидание ответа...</h5>
+        <h5 className="w-[45%] font-normal italic dark:text-white opacity-50">
+          Ожидание ответа...
+        </h5>
       )}
     </div>
   );
