@@ -34,7 +34,7 @@ const Home = () => {
         <NavLink to={'/presentation'} className="button select-zoom">
           <p>О проекте</p>
         </NavLink>
-        <NavLink to={'/graph'} className="button premier-button select-zoom">
+        <NavLink to={'/action'} className="button premier-button select-zoom">
           <p>Анализ видео</p>
         </NavLink>
       </div>
