@@ -1,0 +1,94 @@
+@import 'mixins';
+
+.map-wrapper {
+    @include flex(20px);
+
+    text-align: center;
+
+    .map-header {
+        @include flex(10px);
+    }
+
+    .map {
+        @include flex(0px, row, center, center);
+        @extend %element-shadow;
+
+        min-height: 700px;
+        background-color: var(--element);
+        border-radius: $corner;
+        padding: 2em;
+
+        @media (max-width: 600px) {
+            width: 94vw;
+            min-height: 500px;
+        }
+    }
+}
+.result {
+    @include flex(2rem, column, start, start);
+
+    min-height: 100%;
+    align-self: flex-start;
+
+	h1 {
+		font-size: 26px;
+	}
+
+    p {
+        color: #34da1e;
+    }
+}
+
+.loader {
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.attach-field {
+    @include flex(0.7em, column, center, center);
+
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    border: 2px dashed gray;
+    border-radius: $corner;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+
+    @media (pointer: fine) {
+        &:hover {
+            background-color: var(--hover);
+        }
+    }
+
+    .icon-attach {
+        width: 40px;
+        height: auto;
+        color: var(--text);
+        opacity: 0.5;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    @media (max-width: 600px) {
+        aspect-ratio: 9 / 11;
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 14px;
+        opacity: 0.6;
+        max-width: 280px;
+    }
+}

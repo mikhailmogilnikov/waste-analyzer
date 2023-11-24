@@ -1,0 +1,102 @@
+@import 'mixins';
+
+.footer-wrapper {
+	@include flex;
+
+	border-top: 1px solid var(--border-line);
+}
+
+.footer-content {
+	@include flex(2em, row);
+
+	padding: 4em 1.5em;
+	max-width: 1480px;
+
+	@media (max-width: 800px) {
+		flex-direction: column;
+	}
+}
+
+.footer-item {
+	@include flex(2em, column, start, start);
+
+	width: fit-content;
+
+	@media (max-width: 800px) {
+		width: 100%;
+	}
+}
+
+.footer-title {
+	@include flex(1em, row, center, start);
+
+	align-self: flex-start;
+	width: fit-content;
+
+	h1 {
+		font-size: 18px;
+	}
+
+	.icon-big {
+		width: 34px;
+	}
+
+	svg {
+		width: 80px;
+		height: auto;
+		fill: #d94216;
+	}
+}
+
+.hackaton-footer {
+	width: 300px;
+	height: auto;
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
+
+	.st0 {
+		fill: var(--text);
+	}
+	
+	.st1 {
+		fill: #59D430;
+		animation: colorize 10s infinite;
+	}
+}
+
+
+@keyframes colorize {
+	0% {
+		fill: #59D430;
+	}
+
+	15% {
+		fill: #d4ae30;
+	}
+
+	30% {
+		fill: #d43030;
+	}
+
+	45% {
+		fill: #d43085;
+	}
+
+	60% {
+		fill: #9a30d4;
+	}
+
+	75% {
+		fill: #3053d4;
+	}
+
+	90% {
+		fill: #30bed4;
+	}
+
+	100% {
+		fill: #59D430;
+	}
+}

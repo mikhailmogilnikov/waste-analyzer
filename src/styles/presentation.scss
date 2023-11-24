@@ -1,0 +1,133 @@
+@import 'mixins';
+
+.presentation-wrapper {
+    @include flex(140px);
+
+    padding-top: 10vh;
+
+    @media (max-width: 800px) {
+        padding-top: 6vh;
+    }
+}
+
+.wrapper {
+    @include flex(80px);
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h5 {
+        max-width: 400px;
+        text-align: center;
+    }
+}
+
+.text-mini-title {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.5;
+}
+
+.team-wrapper {
+    @include flex(40px, row, start, center);
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+.person-wrapper {
+    @include flex(30px, column, center, center);
+
+    .avatar {
+        @extend %element-shadow;
+
+        width: 12em;
+        border-radius: 6em;
+        overflow: hidden;
+
+        aspect-ratio: 1;
+        border: 1px solid var(--border-line);
+    }
+}
+
+.text-wrapper {
+    @include flex(10px, column, center, center);
+}
+
+.problem-wrapper {
+    @include flex(2em, row, start);
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.algo-wrapper {
+    @include flex(2em, row, start, center);
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 4em;
+    }
+
+    .algo-item-wrapper {
+        @include flex(30px, column, center, center);
+
+        .text-wrapper {
+            text-align: center;
+        }
+
+        .avatar {
+            width: min-content;
+            padding: 30px 31px 30px 30px;
+            border-radius: 3em;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            aspect-ratio: 1;
+            border: 1px solid var(--border-line);
+
+            transition: border 0.3s;
+
+            &:hover {
+                border: 1px solid var(--border-line-hover);
+            }
+
+            p {
+                font-size: 40px;
+                text-align: center;
+                align-self: center;
+            }
+        }
+    }
+}
+
+.scale-wrapper {
+    @include flex(30px);
+
+    .scale-item {
+        @include flex(30px, row);
+
+        padding: 2em;
+        border-radius: $corner;
+        border: 1px solid var(--border-line);
+        max-width: 600px;
+        transition: border 0.3s;
+
+        &:hover {
+            border: 1px solid var(--border-line-hover);
+        }
+    }
+}
+
+.tools-img {
+    border-bottom: 1px solid var(--border-line);
+}

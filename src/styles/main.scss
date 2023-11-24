@@ -1,0 +1,165 @@
+@import url('./_normalize.css');
+@import 'mixins';
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 1000px var(--var-elements) inset !important;
+	-webkit-text-fill-color: var(--var-text-and-icons) !important;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	display: flex;
+	align-self: center;
+	justify-self: center;
+}
+
+#root {
+	@include flex;
+}
+
+h1 {
+	@include text(20px, $weight: 700);
+}
+
+h2 {
+	@include text(18px, $weight: 700);
+}
+
+h5 {
+	@include text(16px, $weight: 500);
+}
+
+p {
+	@include text(14px, $weight: 500);
+}
+
+.button {
+	@include flex(10px, row, center, center);
+	@extend %element-shadow;
+
+	border: none;
+	box-sizing: border-box;
+	background-color: var(--bg);
+	border-radius: $corner;
+	padding: 1em;
+	z-index: 1;
+	border: 2px solid white;
+
+	&:active {
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	p {
+		@include text(16px, $weight: 700);
+
+		@media (max-width: 600px) {
+			font-size: 14px;
+		}
+	}
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--bg);
+		}
+	}
+
+	@media (max-width: 600px) {
+		padding: 16px;
+
+	}
+}
+
+.premier-button{
+	background-color: var(--orange);
+	border-color: var(--orange);
+	box-shadow: 0 0 30px 0 var(--shadow-orange);
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--hover-orange);
+			border-color: var(--hover-orange);
+		}
+	}
+
+	&:active {
+		box-shadow: 0 0 10px 0 var(--shadow-orange);
+	}
+
+	p {
+		color: white;
+	}
+}
+
+.icon-big {
+	color: var(--text);
+	width: 26px;
+	height: auto;
+	flex-shrink: 0;
+}
+
+.icon-card {
+	color: var(--text);
+	width: auto;
+	height: 60%;
+	flex-shrink: 0;
+}
+
+.adv {
+	height: 74%;
+	opacity: 0.5;
+}
+
+.low-opacity {
+	opacity: 0.6;
+}
+
+.select {
+	cursor: pointer;
+	transition: background-color 0.08s ease-in-out;
+	user-select: none;
+
+	@media (pointer: fine) {
+		&:hover {
+			background-color: var(--hover);
+		}
+	}
+
+	&:active {
+		background-color: var(--active);
+	}
+}
+
+.select-zoom {
+	cursor: pointer;
+	transition: background-color 0.08s, transform 0.15s linear, box-shadow 0.2s;
+	user-select: none;
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+
+.main-wrapper {
+	@include flex;
+}
+
+.content-wrapper {
+	@include flex;
+
+	min-height: 100vh;
+	max-width: 1248px;
+	padding: 4em 1.5em 4em 1.5em;
+}
+
+

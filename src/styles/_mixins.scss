@@ -1,0 +1,73 @@
+:root {
+	--bg-fader: rgba(0, 0, 0, 0.55);
+	--text: #ffffff;
+	--text-inv: #000000;
+	--hover: #101010;
+	--active: rgb(46, 46, 46);
+	--shadow: rgba(255, 64, 0, 0.518);
+	--header-line: rgba(255, 255, 255, 0.2);
+	--border-line: rgba(255, 255, 255, 0.12);
+	--border-line-hover: rgba(255, 255, 255, 0.28);
+	--orange: #b16ec7;
+	--hover-orange: #d07bdb;
+	--shadow-orange: rgba(225, 0, 255, 0.318);
+	--element: #141414;
+	--grad: linear-gradient(60deg, #c07cff, #ffdfed);
+	--git-grad: linear-gradient(140deg, #db94f9b5, #8080ffb4);
+	--git-shadow: rgba(151, 85, 175, 0.374);
+	--git-color: #8787ef;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg-fader: rgba(255, 255, 255, 0.55);
+		--text: #000000;
+		--text-inv: #ffffff;
+		--hover: #eeeeee;
+		--active: #ffffff;
+		--shadow: rgba(0, 0, 0, 0.2);
+		--header-line: rgba(0, 0, 0, 0.2);
+		--border-line: rgba(0, 0, 0, 0.12);
+		--border-line-hover: rgba(0, 0, 0, 0.3);
+		--orange: #ff3700;
+		--hover-orange: #e43100;
+		--shadow-orange: rgba(255, 85, 0, 0.518);
+		--element: #ffffff;
+		--grad: linear-gradient(340deg, #ff4100, #000000);
+		--git-grad: linear-gradient(60deg, #8469b4, #8787ef);
+		--git-shadow: rgba(100, 75, 209, 0.25);
+		--git-color: transparent;
+	}
+}
+
+$green: rgb(28, 215, 53);
+$blue: rgb(26, 169, 230);
+$azure: rgb(0, 255, 238);
+$orange: rgb(248, 60, 26);
+$corner: 22px;
+
+%element-shadow {
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin flex($gap: 0px, $direction: column, $align: center, $justify: start) {
+	box-sizing: border-box;
+	width: 100%;
+	height: min-content;
+	display: flex;
+	flex-direction: $direction;
+	gap: $gap;
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin text($size: 13px, $color: var(--text), $weight: 700) {
+	padding: 0;
+	margin: 0;
+	height: auto;
+	position: relative;
+	display: inline-block;
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+}

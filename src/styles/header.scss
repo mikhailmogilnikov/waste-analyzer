@@ -1,0 +1,113 @@
+@import 'mixins';
+
+.header-wrapper {
+	@include flex;
+
+	position: fixed;
+
+	top: 0;
+	height: 4em;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.3s;
+	backdrop-filter: blur(25px);
+	z-index: 5;
+
+	&.scrolled {
+		border-bottom: 1px solid var(--header-line);
+	}
+
+	.header-fader {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: calc(4em);
+		background: linear-gradient(to bottom, var(--bg), var(--bg-fader));
+		z-index: 1;
+	}
+}
+
+.header-content {
+	@include flex(0, row, center, space-between);
+
+	max-width: 1480px;
+	height: 100%;
+	padding: 0 1.5em;
+	z-index: 2;
+
+	.title {
+		@include flex(1em, row, center, center);
+
+		width: fit-content;
+
+		svg {
+			width: 80px;
+			height: auto;
+			fill: #d94216;
+		}
+
+		@media (max-width: 600px) {
+			h1 {
+				display: none;
+			}
+		}
+	}
+}
+
+.additional-content {
+	@include flex(2em, row, center, center);
+
+	width: min-content;
+	height: auto;
+}
+
+.github-button {
+	@include flex(0.5em, row, center, center);
+
+	width: max-content;
+	padding: 0.5em 1em;
+	background-image: var(--git-grad);
+	border-radius: 18px;
+	box-shadow: 0 6px 10px 0 var(--git-shadow);
+	cursor: pointer;
+	user-select: none;
+	transition: transform 0.2s, box-shadow 0.2s;
+
+	&:active {
+		transform: scale(0.95);
+		box-shadow: 0 2px 5px 0 var(--git-shadow);
+	}
+
+	p {
+		font-weight: 600;
+		font-size: 15px;
+		color: white;
+
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+
+	.icon-big {
+		width: 1.5em;
+		color: white;
+	}
+}
+
+.hackaton-header {
+	width: 260px;
+	height: auto;
+	flex-shrink: 0;
+
+	@media (max-width: 800px) {
+		display: none;
+	}
+
+	.st0 {
+		fill: var(--text);
+	}
+
+	.st1 {
+		fill: #49d81a;
+	}
+}
