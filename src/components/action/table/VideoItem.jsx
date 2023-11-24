@@ -1,16 +1,22 @@
-import { CheckCircle, Clock } from '@phosphor-icons/react';
+import { CheckCircle, Clock, Question } from '@phosphor-icons/react';
 import { Spinner } from '@nextui-org/spinner';
 
 const VideoItem = ({ id, status, fileName, type = '', avg }) => {
   let itemStyles = '';
   let statusIcon;
   let responseName;
+  const isNotFound = type === 'не определен';
   if (id % 2 === 0) {
     itemStyles = 'bg-[#efefef] dark:bg-white/10';
   }
   switch (status) {
     case 1:
-      statusIcon = (
+      statusIcon = isNotFound ? (
+        <Question
+          weight="fill"
+          className="absolute text-yellow-400 w-7 h-7 -translate-y-[4px]"
+        />
+      ) : (
         <CheckCircle
           weight="fill"
           className="absolute text-green-500 w-7 h-7 -translate-y-[4px]"
@@ -42,7 +48,7 @@ const VideoItem = ({ id, status, fileName, type = '', avg }) => {
       responseName = 'неизвестный материал';
   }
   const avgConv = Math.round(Number(avg) * 100);
-  const result = `С вероятностью ${avgConv}% в кузове находится ${responseName}.`;
+  const result = isNotFound ? 'В кузове не обнаружены отходы.' : `С вероятностью ${avgConv}% в кузове находится ${responseName}.`;
   return (
     <div
       className={`${itemStyles} w-full flex flex-row p-4 gap-6 rounded-2xl items-start`}

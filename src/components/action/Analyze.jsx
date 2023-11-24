@@ -14,6 +14,7 @@ const Analyze = () => {
     console.log({ response });
   }, [response]);
 
+  const clear = () => setState(0);
   return (
     <div className="presentation-wrapper">
       <div className="w-full flex flex-col gap-4">
@@ -39,7 +40,7 @@ const Analyze = () => {
             setFiles={setFiles}
           />
         ) : (
-          <Table state={state} response={response} files={files} />
+          <Table state={state} response={response} files={files} clear={clear}/>
         )}
       </div>
     </div>

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import TableBody from './TableBody.jsx';
 import TableHead from './TableHead.jsx';
 
-const Table = ({ state, response, files }) => (
+const Table = ({ state, response, files, clear }) => (
   <AnimatePresence>
     {state && (
       <div className="w-full flex flex-col gap-4 mt-4">
@@ -32,12 +32,23 @@ const Table = ({ state, response, files }) => (
           }}
           className="flex flex-row gap-4"
         >
-          <Button className="font-medium" variant="flat">
+          <Button className="font-medium" variant="flat" onClick={clear}>
             Отмена
           </Button>
-          <Button className="font-medium text-green-950" color="success">
-            Экспорт в .csv
-          </Button>
+          {state === 2 && 
+          <motion.div  
+          initial={{ transform: 'translateY(1.5rem)', opacity: 0 }}
+          animate={{ transform: 'translateY(0rem)', opacity: 1 }}
+          exit={{ transform: 'translateY(1.5rem)', opacity: 0 }}
+          transition={{
+            type: 'spring',
+            stiffness: 120,
+            damping: 15,
+          }} className='w-min'>
+            <Button className="font-medium text-green-950" color="success">
+              Экспорт в .csv
+            </Button>
+            </motion.div>}
         </motion.div>
       </div>
     )}
