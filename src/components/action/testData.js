@@ -22,7 +22,7 @@ const testData = [
 		id: 4,
 		status: 0,
 		fileName: 'testVideo4.mp4',
-	}
+	},
 ];
 
 export default testData;

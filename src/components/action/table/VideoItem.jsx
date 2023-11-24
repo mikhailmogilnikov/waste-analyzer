@@ -39,7 +39,7 @@ const VideoItem = ({ id, status, fileName, response = '' }) => {
       responseName = 'кирпич';
       break;
     default:
-      responseName = 'неизвестно';
+      responseName = 'неизвестный материал';
   }
   const result = `С вероятностью ${response.probability}% в кузове находится ${responseName}.`;
   return (
