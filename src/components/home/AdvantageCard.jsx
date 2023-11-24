@@ -1,14 +1,13 @@
-import { Devices, GitFork, LockKey } from '@phosphor-icons/react'
-import PropTypes from 'prop-types';
+import { Lightning, ListChecks, PlugsConnected } from '@phosphor-icons/react'
 
 const AdvantageCard = ({ icon, name, desc }) => {
   let iconComponent;
   if (icon === 'App') {
-    iconComponent = <LockKey weight="thin" className="icon-card adv" />;
+    iconComponent = <Lightning weight="thin" className="icon-card adv" />;
   } else if (icon === 'Paperclip') {
-    iconComponent = <Devices weight="thin" className="icon-card adv" />;
+    iconComponent = <PlugsConnected weight="thin" className="icon-card adv" />;
   } else if (icon === 'Chartline') {
-    iconComponent = <GitFork weight="thin" className="icon-card adv" />;
+    iconComponent = <ListChecks weight="thin" className="icon-card adv" />;
   } else {
     iconComponent = null;
   }
@@ -22,12 +21,6 @@ const AdvantageCard = ({ icon, name, desc }) => {
       </div>
     </div>
   );
-};
-
-AdvantageCard.propTypes = {
-  icon: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
 };
 
 export default AdvantageCard;
