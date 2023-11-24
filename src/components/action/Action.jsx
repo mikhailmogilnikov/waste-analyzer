@@ -5,14 +5,11 @@ import Dropzone from 'react-dropzone';
 import post from '../../scripts/post.js';
 import Good from './Good';
 import Errors from './Errors';
+import { multiUploader } from "../../scripts/videoConv";
+
 
 const Action = () => {
-//   const res = {'file_detect': true, 'filetype': 'ФМУ-76', 'errors': ['Неправильно посчитана сумма (руб): 1143890.29']};
-//   const r = {
-//     "errors": [],
-//     "file_detect": true,
-//     "filetype": "ФМУ-76"
-// }
+
   const [state, setState] = useState(0);
   const [response, setResponse] = useState(null);
 
@@ -21,17 +18,12 @@ const Action = () => {
     setResponse(null);
   };
 
-  const onDrop = (acceptedFiles) => {
-    if (!acceptedFiles.length) return;
-    const file = acceptedFiles[0];
-    setState(1);
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const fileContents = e.target.result;
-      post(fileContents, file, setState, setResponse);
-    };
-    reader.readAsArrayBuffer(file);
-  };
+  const onDrop = async (acceptedFiles) => {
+    multiUploader(acceptedFiles).then((result) => {
+      console.log({ multiUploader: result });
+      post(result);
+    });
+  }
 
   const passive = <p className="low-opacity">Ожидание скан-образа (.pdf, .docx).</p>
   const awating =  <p style={{ color: '#dad71e' }}>
@@ -48,10 +40,10 @@ const Action = () => {
         </div>
         {state === 0 ? (
           <Dropzone
-            onDrop={onDrop}
-            accept={{ 'data/pdf': ['.pdf'] }}
-            maxFiles={1}
-          >
+          onDrop={onDrop}
+          accept={{ "video/mp4": [".mp4"] }}
+          maxFiles={99}
+        >
             {({ getRootProps, getInputProps }) => (
               <div {...getRootProps()} className="attach-field">
                 <input {...getInputProps()} />
@@ -116,42 +108,3 @@ const Action = () => {
 
 export default Action;
 
-// [
-//     {
-//         "filename": "1.mp4",
-//         "cases_count": "2",
-//         "timestamps": [
-//             "00:22",
-//             "00:25"
-//         ]
-//     },
-//     {
-//         "filename": "2.mp4",
-//         "cases_count": "2",
-//         "timestamps": [
-//             "00:00",
-//             "00:03"
-//         ]
-//     },
-//     {
-//         "filename": "3.mp4",
-//         "cases_count": "1",
-//         "timestamps": [
-//             "00:22"
-//         ]
-//     },
-//     {
-//         "filename": "4.mp4",
-//         "cases_count": "1",
-//         "timestamps": [
-//             "00:00"
-//         ]
-//     },
-//     {
-//         "filename": "5.mp4",
-//         "cases_count": "1",
-//         "timestamps": [
-//             "00:00"
-//         ]
-//     }
-// ]
