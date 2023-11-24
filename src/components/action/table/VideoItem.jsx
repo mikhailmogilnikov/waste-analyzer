@@ -1,7 +1,7 @@
 import { CheckCircle, Clock } from '@phosphor-icons/react';
 import { Spinner } from '@nextui-org/spinner';
 
-const VideoItem = ({ id, status, fileName, response = '' }) => {
+const VideoItem = ({ id, status, fileName, type = '', avg }) => {
   let itemStyles = '';
   let statusIcon;
   let responseName;
@@ -25,23 +25,24 @@ const VideoItem = ({ id, status, fileName, response = '' }) => {
         <Clock className="absolute text-white/50 w-6 h-6 translate-x-[1px] -translate-y-[2px]" />
       );
   }
-  switch (response.wasteType) {
-    case 0:
+  switch (type) {
+    case 'Beton':
       responseName = 'бетон';
       break;
-    case 1:
+    case 'Grunt':
       responseName = 'грунт';
       break;
-    case 2:
+    case 'Derevo':
       responseName = 'дерево';
       break;
-    case 3:
+    case 'Kirpich':
       responseName = 'кирпич';
       break;
     default:
       responseName = 'неизвестный материал';
   }
-  const result = `С вероятностью ${response.probability}% в кузове находится ${responseName}.`;
+  const avgConv = Math.round(Number(avg) * 100);
+  const result = `С вероятностью ${avgConv}% в кузове находится ${responseName}.`;
   return (
     <div
       className={`${itemStyles} w-full flex flex-row p-4 gap-6 rounded-2xl items-start`}
@@ -50,7 +51,7 @@ const VideoItem = ({ id, status, fileName, response = '' }) => {
       <h5 className="w-[35%] font-normal dark:text-white opacity-70 break-words">
         {fileName}
       </h5>
-      {response !== '' ? (
+      {type !== '' ? (
         <h5 className="w-[45%] dark:text-white">{result}</h5>
       ) : (
         <h5 className="w-[45%] font-normal italic dark:text-white opacity-50">Ожидание ответа...</h5>

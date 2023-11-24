@@ -1,17 +1,27 @@
 import Action from './Action.jsx';
-import TableBody from './table/TableBody.jsx';
-import TableHead from './table/TableHead.jsx';
-
+import Table from './table/Table.jsx';
+import {useEffect, useState} from 'react';
 const Analyze = () => {
+  const [state, setState] = useState(0);
+  const [response, setResponse] = useState(null);
+  const [files, setFiles] = useState(null);
+
+
+  useEffect(() => {console.log({state})}, [state])
+  useEffect(() => {console.log({response})}, [response])
+
+ 
   return (
     <div className="presentation-wrapper">
       <div className="w-full flex flex-col gap-10">
         <h1 className="text-left w-full text-3xl">Обработка видеофайлов</h1>
-        <Action />
-        <div className="w-full flex flex-col gap-4 dark:bg-white/10 border-1 border-black/10 rounded-3xl p-6 shadow-large shadow-black/40">
-          <TableHead />
-          <TableBody />
-        </div>
+        {
+          !state 
+        ? 
+          <Action setResponse={setResponse} setState={setState} setFiles={setFiles}/> 
+        :
+          <Table state={state} response={response} files={files}/> 
+         }
       </div>
     </div>
   );

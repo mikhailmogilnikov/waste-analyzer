@@ -1,18 +1,31 @@
 import VideoItem from './VideoItem.jsx';
-import testData from '../testData.js';
 
-const TableBody = () => {
+const TableBody = ({state, response, files}) => {
   return (
-    <>
-      {testData.map((video) => (
+    <> {
+      state === 1
+      ?
+     (files.map((file, index) => 
+     <VideoItem 
+      key={`f_${index}`}
+      id={index + 1}
+      status={0}
+      fileName={file}
+      avg={null}
+      type={''}
+     />))  
+      :
+      (response && response.length && response.map((video, index) => (
         <VideoItem
-          key={video.id}
-					id={video.id}
-          status={video.status}
-          fileName={video.fileName}
-          response={video.response}
+          key={`v_${index}`}
+					id={index + 1}
+          status={1}
+          fileName={video.filename}
+          avg={video.avg}
+          type={video.class_name}
         />
-      ))}
+      )))
+    }
     </>
   );
 };
