@@ -1,4 +1,4 @@
-import { GithubLogo } from '@phosphor-icons/react';
+import { GithubLogo, VideoCamera } from '@phosphor-icons/react';
 import '../../styles/header.scss';
 
 import { NavLink } from 'react-router-dom';
@@ -13,6 +13,7 @@ const Header = () => {
       <div className="header-fader"></div>
       <div className="header-content">
         <NavLink to={'/'} className="title">
+          <VideoCamera weight="bold" className="icon-big" />
           <h1>Анализатор отходов</h1>
         </NavLink>
         <div className="additional-content">

@@ -7,8 +7,7 @@ const Home = () => {
     <div className="home-wrapper">
       <div className="big-letters-wrapper">
         <h2 className="big-letters">
-          Cистема распознавания скан-образа документов на корректность
-          оформления.
+          Cистема распознавания видов перевозимых отходов строительства.
         </h2>
       </div>
 
@@ -16,8 +15,8 @@ const Home = () => {
         <NavLink to={'/presentation'} className="button select-zoom">
           <p>О проекте</p>
         </NavLink>
-        <NavLink to={'/graph'} className="button premier-button select-zoom">
-          <p>Сканировать документ</p>
+        <NavLink to={'/action'} className="button premier-button select-zoom">
+          <p>Начать работу</p>
         </NavLink>
       </div>
 
@@ -36,7 +35,7 @@ const Home = () => {
           <p>О проекте</p>
         </NavLink>
         <NavLink to={'/graph'} className="button premier-button select-zoom">
-          <p>Сканировать документ</p>
+          <p>Анализ видео</p>
         </NavLink>
       </div>
     </div>

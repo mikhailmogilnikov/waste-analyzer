@@ -17,8 +17,8 @@ const Presentation = () => {
 			<Scale />
 			
 			<div className='button-wrapper' style={{ maxWidth: '400px', marginBottom: '70px' }}>
-				<NavLink to={'/graph'} className='button premier-button select-zoom'>
-					<p>Сканировать документ</p>
+				<NavLink to={'/action'} className='button premier-button select-zoom'>
+					<p>Проанализировать видео</p>
 				</NavLink>
 			</div>
 

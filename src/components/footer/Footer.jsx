@@ -1,5 +1,5 @@
+import { VideoCamera } from '@phosphor-icons/react'
 import HackatonLogo from '../../../public/assets/svg/HackatonLogo';
-import { RailwaysLogo } from '../../../public/assets/svg/Railways';
 import '../../styles/footer.scss';
 
 const Footer = () => {
@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-item">
           <div className="footer-title">
-            <RailwaysLogo />
-            <h1>Анализатор текста</h1>
+            <VideoCamera weight="bold" className="icon-big" />
+            <h1>Анализатор отходов</h1>
           </div>
           <div className="hackaton-footer">
             <HackatonLogo />

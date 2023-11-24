@@ -1,102 +1,104 @@
 @import 'mixins';
 
 .footer-wrapper {
-	@include flex;
+  @include flex;
 
-	border-top: 1px solid var(--border-line);
+  border-top: 1px solid var(--border-line);
 }
 
 .footer-content {
-	@include flex(2em, row);
+  @include flex(2em, row);
 
-	padding: 4em 1.5em;
-	max-width: 1480px;
+  padding: 4em 1.5em;
+  max-width: 1480px;
 
-	@media (max-width: 800px) {
-		flex-direction: column;
-	}
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .footer-item {
-	@include flex(2em, column, start, start);
+  @include flex(2em, column, start, start);
 
-	width: fit-content;
+  width: fit-content;
 
-	@media (max-width: 800px) {
-		width: 100%;
-	}
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 .footer-title {
-	@include flex(1em, row, center, start);
+  @include flex(1em, row, center, start);
 
-	align-self: flex-start;
-	width: fit-content;
+  align-self: flex-start;
+  width: fit-content;
 
-	h1 {
-		font-size: 18px;
-	}
+  h1 {
+    font-size: 18px;
+		color: transparent;
+		background-image: var(--grad);
+		background-clip: text;
+  }
 
-	.icon-big {
-		width: 34px;
-	}
+  .icon-big {
+    width: 34px;
+  }
 
-	svg {
-		width: 80px;
-		height: auto;
-		fill: #d94216;
-	}
+  svg {
+    width: 80px;
+    height: auto;
+    fill: $orange;
+  }
 }
 
 .hackaton-footer {
-	width: 300px;
-	height: auto;
+  width: 340px;
+  height: min-content;
 
-	@media (max-width: 600px) {
-		width: 100%;
-	}
+  @media (max-width: 600px) {
+    width: 120%;
+  }
 
-	.st0 {
-		fill: var(--text);
-	}
-	
-	.st1 {
-		fill: #59D430;
-		animation: colorize 10s infinite;
-	}
+  .st0 {
+    fill: var(--text);
+  }
+
+  .st1 {
+    fill: #59d430;
+    animation: colorize 10s infinite;
+  }
 }
 
-
 @keyframes colorize {
-	0% {
-		fill: #59D430;
-	}
+  0% {
+    fill: #59d430;
+  }
 
-	15% {
-		fill: #d4ae30;
-	}
+  15% {
+    fill: #d4ae30;
+  }
 
-	30% {
-		fill: #d43030;
-	}
+  30% {
+    fill: #d43030;
+  }
 
-	45% {
-		fill: #d43085;
-	}
+  45% {
+    fill: #d43085;
+  }
 
-	60% {
-		fill: #9a30d4;
-	}
+  60% {
+    fill: #9a30d4;
+  }
 
-	75% {
-		fill: #3053d4;
-	}
+  75% {
+    fill: #3053d4;
+  }
 
-	90% {
-		fill: #30bed4;
-	}
+  90% {
+    fill: #30bed4;
+  }
 
-	100% {
-		fill: #59D430;
-	}
+  100% {
+    fill: #59d430;
+  }
 }
