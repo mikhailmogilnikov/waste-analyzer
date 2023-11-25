@@ -45,18 +45,18 @@ export const csvClassesDownloader = (response) => {
     ]];
 
     response.forEach((item, index) => {
-        const r = '2';
+        let r = '2';
             switch (item.class_name) {
-                case 'бетон':
+                case 'Beton':
                     r = '1';
                 break;
-                case 'грунт':
+                case 'Grunt':
                     r = '3';
                 break;
-                case 'дерево':
+                case 'Derevo':
                     r = '2';
                 break;
-                case 'кирпич':
+                case 'Kirpich':
                     r = '4';
                 break;
             }
