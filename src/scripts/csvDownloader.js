@@ -45,7 +45,7 @@ export const csvClassesDownloader = (response) => {
     ]];
 
     response.forEach((item, index) => {
-        const r = '3';
+        const r = '2';
             switch (item.class_name) {
                 case 'бетон':
                     r = '1';
