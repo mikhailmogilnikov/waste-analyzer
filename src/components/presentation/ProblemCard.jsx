@@ -1,11 +1,11 @@
-import { ClockCountdown, Hand, Bank } from '@phosphor-icons/react';
+import { Hand, Bank, Truck } from '@phosphor-icons/react';
 
 const ProblemCard = ({ icon, name, desc }) => {
   let iconComponent;
   if (icon === 'Warning') {
     iconComponent = <Bank className="icon-card" />;
   } else if (icon === 'Graph') {
-    iconComponent = <ClockCountdown className="icon-card" />;
+    iconComponent = <Truck className="icon-card" />;
   } else if (icon === 'CurrencyRub') {
     iconComponent = <Hand className="icon-card" />;
   } else {
