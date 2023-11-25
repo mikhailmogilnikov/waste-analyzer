@@ -1,4 +1,4 @@
-import { FilePlus, GearFine, WebhooksLogo } from '@phosphor-icons/react'
+import { GearFine, ListPlus, WebhooksLogo } from '@phosphor-icons/react'
 
 const Scale = () => {
 	return (
@@ -21,9 +21,9 @@ const Scale = () => {
 				</div>
 
 				<div className='scale-item'>
-					<FilePlus weight='bold' className='icon-big' />
+					<ListPlus weight='bold' className='icon-big' />
 					<p>
-						Добавление новых форм актов для успешной валидации введенных данных.
+						Добавление новых типов отходов.
 					</p>
 				</div>
 			</div>
