@@ -25,7 +25,7 @@ const Header = () => {
             <HackatonLogo />
           </NavLink>
           <NavLink
-            to={'https://github.com/Sereneum/text-analyzer-server'}
+            to={'https://github.com/Sereneum/waste-analyzer-server'}
             target="_blank"
             className="github-button"
           >
