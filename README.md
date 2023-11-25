@@ -1,8 +1,14 @@
-# React + Vite
+# Анализатор отходов
+![example branch parameter](https://github.com/mikhailmogilnikov/waste-analyzer/actions/workflows/main.yml/badge.svg?branch=master)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![startscreen](./public/assets/images/screen1.png)
 
-Currently, two official plugins are available:
+## Описание решения
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Кейс: Определение вида отходов
+
+Партнер: Департамент строительства города Москвы
+
+Веб-сайт содержит информацию о команде и проекте, описание преимуществ и ссылку на репозиторий решения. Также присутствует возможность анализа видеофайлов онлайн и последущего экспорта результатов в csv-файл.
+
+#### Хакатон "Цифровой прорыв". Москва, 23.11.2023 – 26.11.2023
