@@ -35,7 +35,7 @@ const Action = ({ setResponse, setState, state, setFiles }) => {
         >
           <Dropzone
             onDrop={onDrop}
-            accept={{ 'video/mp4': ['.mp4'] }}
+            accept={{ 'video/mp4': ['.mp4', '.avi', '.mkv', '.mov', '.wmv', '.flv', '.webm', '.3gp'] }}
             maxFiles={99}
           >
             {({ getRootProps, getInputProps }) => (

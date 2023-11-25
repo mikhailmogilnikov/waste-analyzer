@@ -7,7 +7,7 @@ const post = (postData) => new Promise((res, rej) => {
   });
   console.log({ formData });
   axios
-    .post('http://127.0.0.1:5000/upload', formData)
+    .post('http://127.0.0.1:5000/api/upload', formData)
     .then((response) => {
       console.log('File uploaded successfully', response.data);
       res(response.data);
