@@ -2,6 +2,7 @@ import { Button } from '@nextui-org/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import TableBody from './TableBody.jsx';
 import TableHead from './TableHead.jsx';
+import { csvClassesDownloader } from '../../../scripts/csvDownloader.js';
 
 const Table = ({ state, response, files, clear }) => (
   <AnimatePresence>
@@ -45,7 +46,7 @@ const Table = ({ state, response, files, clear }) => (
             stiffness: 120,
             damping: 15,
           }} className='w-min'>
-            <Button className="font-medium text-green-950" color="success">
+            <Button className="font-medium text-green-950" color="success" onClick={() => csvClassesDownloader(response)}>
               Экспорт в .csv
             </Button>
             </motion.div>}
