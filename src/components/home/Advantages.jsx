@@ -29,7 +29,7 @@ const Advantages = () => {
         desc="Опция вывода результатов обработки в .csv-файл."
       />
       <NavLink
-        to="https://github.com/Sereneum/text-analyzer-server"
+        to="https://github.com/Sereneum/waste-analyzer-server"
         target="_blank"
         className="card-wrapper large"
         style={{ boxShadow: '0 0 40px 0 rgba(0, 0, 0, 0.05)' }}
